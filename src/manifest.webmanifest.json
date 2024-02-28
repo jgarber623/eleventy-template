@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "description": "An Eleventy website for…",
+  "icons": [],
+  "lang": "en-US",
+  "name": "eleventy-template",
+  "short_name": "eleventy-template",
+  "start_url": "https://eleventy-template.example"
+}

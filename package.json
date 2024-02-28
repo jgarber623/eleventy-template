@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "name": "eleventy-template",
+  "description": "An Eleventy website for…",
+  "homepage": "https://github.com/jgarber623/eleventy-template",
+  "bugs": "https://github.com/jgarber623/eleventy-template/issues",
+  "license": "MIT",
+  "author": "Jason Garber <jason@sixtwothree.org> (https://sixtwothree.org)",
+  "repository": "github:jgarber623/eleventy-template",
+  "scripts": {
+    "build": "eleventy --quiet",
+    "clean": "rm -rf _site",
+    "lint": "npm run lint:css && npm run lint:js",
+    "lint:css": "stylelint ./src/**/*.css",
+    "lint:js": "eslint .",
+    "prebuild": "npm run clean",
+    "pretest": "npm run build",
+    "start": "npm run build -- --serve",
+    "test": "test -f ./_site/index.html"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@jgarber/eleventy-plugin-liquid": "^0.1.0",
+    "@jgarber/eleventy-plugin-markdown": "^0.1.3",
+    "@jgarber/eleventy-plugin-postcss": "^0.3.3",
+    "@jgarber/eslint-config": "^4.3.0",
+    "@jgarber/stylelint-config": "^4.0.0",
+    "cssnano": "^6.0.4",
+    "postcss-easy-import": "^4.0.0",
+    "postcss-nesting": "^12.0.3"
+  }
+}
