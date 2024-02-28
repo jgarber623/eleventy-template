@@ -9,5 +9,3 @@
 
 [![Deployment](https://img.shields.io/github/deployments/jgarber623/eleventy-template/eleventy-template-example%20%28Production%29?label=Deployment&logo=github&style=for-the-badge)](https://github.com/jgarber623/eleventy-template/deployments/activity_log?environment=eleventy-template-example+%28Production%29)
 [![Build](https://img.shields.io/github/actions/workflow/status/jgarber623/eleventy-template/ci.yml?branch=main&logo=github&style=for-the-badge)](https://github.com/jgarber623/eleventy-template/actions/workflows/ci.yml)
-
-# License
