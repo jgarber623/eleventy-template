@@ -1,6 +1,12 @@
-module.exports = function(eleventyConfig) {
+import eleventyPluginLiquid from "@jgarber/eleventy-plugin-liquid";
+import eleventyPluginMarkdown from "@jgarber/eleventy-plugin-markdown";
+import eleventyPluginPostcss from "@jgarber/eleventy-plugin-postcss";
+
+import manifest from "./src/manifest.webmanifest.json" with { type: "json" };
+
+export default function(eleventyConfig) {
   // Global Data
-  eleventyConfig.addGlobalData("app", require("./src/manifest.webmanifest.json"));
+  eleventyConfig.addGlobalData("app", manifest);
 
   // Passthrough File Copy
   eleventyConfig
@@ -11,13 +17,13 @@ module.exports = function(eleventyConfig) {
     });
 
   // Plugins
-  eleventyConfig.addPlugin(require("@jgarber/eleventy-plugin-liquid"));
-  eleventyConfig.addPlugin(require("@jgarber/eleventy-plugin-markdown"));
-  eleventyConfig.addPlugin(require("@jgarber/eleventy-plugin-postcss"));
+  eleventyConfig.addPlugin(eleventyPluginLiquid);
+  eleventyConfig.addPlugin(eleventyPluginMarkdown);
+  eleventyConfig.addPlugin(eleventyPluginPostcss);
+}
 
-  return {
-    dir: {
-      input: "./src",
-    },
-  };
+export const config = {
+  dir: {
+    input: "./src",
+  },
 };

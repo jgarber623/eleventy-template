@@ -6,27 +6,26 @@
   "bugs": "https://github.com/jgarber623/eleventy-template/issues",
   "license": "MIT",
   "author": "Jason Garber <jason@sixtwothree.org> (https://sixtwothree.org)",
+  "type": "module",
   "repository": "github:jgarber623/eleventy-template",
   "scripts": {
-    "build": "eleventy --quiet",
-    "clean": "rm -rf _site",
+    "build": "npx eleventy --quiet",
     "lint": "npm run lint:css && npm run lint:js",
-    "lint:css": "stylelint ./src/**/*.css",
-    "lint:js": "eslint .",
-    "prebuild": "npm run clean",
+    "lint:css": "npx stylelint ./src/**/*.css",
+    "lint:js": "npx eslint .",
     "pretest": "npm run build",
     "start": "npm run build -- --serve",
     "test": "test -f ./_site/index.html"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.0.0",
     "@jgarber/eleventy-plugin-liquid": "^1.0.0",
     "@jgarber/eleventy-plugin-markdown": "^1.0.0",
     "@jgarber/eleventy-plugin-postcss": "^1.0.1",
-    "@jgarber/eslint-config": "^6.1.0",
-    "@jgarber/stylelint-config": "^4.0.0",
+    "@jgarber/eslint-config": "^7.0.0",
+    "@jgarber/stylelint-config": "^5.0.0",
     "cssnano": "^7.0.6",
     "postcss-easy-import": "^4.0.0",
-    "postcss-nesting": "^13.0.0"
+    "postcss-nesting": "^13.0.1"
   }
 }
