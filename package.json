@@ -7,7 +7,7 @@
   "license": "MIT",
   "author": "Jason Garber <jason@sixtwothree.org> (https://sixtwothree.org)",
   "type": "module",
-  "repository": "github:jgarber623/eleventy-template",
+  "repository": "https://github.com/jgarber623/eleventy-template",
   "scripts": {
     "build": "npx eleventy --quiet",
     "lint": "npm run lint:css && npm run lint:js",
