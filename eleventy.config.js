@@ -1,20 +1,17 @@
+import { readFileSync } from "node:fs";
+
 import eleventyPluginLiquid from "@jgarber/eleventy-plugin-liquid";
 import eleventyPluginMarkdown from "@jgarber/eleventy-plugin-markdown";
 import eleventyPluginPostcss from "@jgarber/eleventy-plugin-postcss";
 
-import manifest from "./src/manifest.webmanifest.json" with { type: "json" };
-
 export default function(eleventyConfig) {
   // Global Data
-  eleventyConfig.addGlobalData("app", manifest);
+  eleventyConfig.addGlobalData("app", JSON.parse(readFileSync("./src/manifest.webmanifest")));
 
   // Passthrough File Copy
   eleventyConfig
-    .addPassthroughCopy("./src/*.{ico,txt}")
-    .addPassthroughCopy("./src/assets/images")
-    .addPassthroughCopy({
-      "./src/manifest.webmanifest.json": "manifest.webmanifest",
-    });
+    .addPassthroughCopy("./src/*.{ico,txt,webmanifest}")
+    .addPassthroughCopy("./src/assets/images");
 
   // Plugins
   eleventyConfig.addPlugin(eleventyPluginLiquid);
